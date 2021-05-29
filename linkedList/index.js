@@ -2,7 +2,6 @@
 const LinkedList = require('./LinkedList.js');
 const Node = require('./Node.js');
 LinkedList.prototype.isEmpty = function() {
-    console.log(this);
     return this.head === null
 }
 
@@ -27,14 +26,29 @@ LinkedList.prototype.insertAtTail = function(data) {
 
     currentNode.nextEle = tempNode;
     return this;
-    // while()
+}
+
+LinkedList.prototype.search = function(data) {
+    if(this.isEmpty()) {
+        return false
+    }
+    let currentNode = this.head;
+    while(currentNode !== null) {
+        if(currentNode.data === data) {
+            return currentNode
+        }
+        currentNode = currentNode.nextEle
+    }
+    return false
 }
 
 let list = new LinkedList();
 list.insertAtHead("1");
 list.insertAtHead("2");
 list.insertAtTail("3");
-
-console.log(list.head);
+list.insertAtTail("6");
+list.insertAtTail("5");
+list.insertAtTail("10");
+console.log(list.search("10"))
 
 
