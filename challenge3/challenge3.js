@@ -3,7 +3,6 @@ const LinkedList = require('./linkedlist.js');
 const Node = require('./node.js');
 
 function detectLoop(list) {
-    let obj = {}
     if(list.isEmpty()) {
         return false
     }
@@ -20,6 +19,22 @@ function detectLoop(list) {
 
         set.add(currentNode);
         currentNode = currentNode.nextEle
+    }
+
+    return false
+}
+
+function detectLoopUsingFloydAlgo(list) {
+    let moveOneStep = list.head;
+    let moveTwoStep = list.head;
+
+    while(moveOneStep !== null && moveTwoStep !== null && moveTwoStep.nextEle !== null) {
+        moveOneStep = moveOneStep.nextEle;
+        moveTwoStep = moveTwoStep.nextEle;
+
+        if(moveOneStep === moveTwoStep) {
+            return true
+        }
     }
 
     return false
@@ -45,3 +60,4 @@ for(var i=0; i<4; i++){
 }
 
 console.log(detectLoop(list))
+console.log(detectLoopUsingFloydAlgo(list))
