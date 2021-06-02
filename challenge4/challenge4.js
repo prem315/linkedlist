@@ -3,20 +3,18 @@ const LinkedList = require('./linkedlist.js');
 const Node = require('./node.js');
 
 function findMid(list) {
-    let midNode = null;
-    let length = 0;
-    let tempNode = list.getHead();
-    while (tempNode != null) {
-        tempNode = tempNode.nextElement;
-        length++;
-    }
-    let middle = Math.ceil(length / 2);
-    midNode = list.getHead();
-    for (var i = 1; i < middle; i++) {
-        midNode = midNode.nextElement;
+    let currentNode = list.head;
+    let length = 0
+    while(currentNode !== null) {
+        currentNode = currentNode.nextEle;
+        length = length + 1
     }
 
-    return midNode;
+    let middle = Math.ceil(length / 2);
+    let middleNode = list.head;
+    for(let i = 0; i < middle; i++) {
+        middleNode = middleNode.nextEle
+    }
 }
 
 let list = new LinkedList();
@@ -25,7 +23,8 @@ list.insertAtHead(21);
 list.insertAtHead(14);
 list.insertAtHead(11);
 list.insertAtHead(7);
+list.insertAtTail(8);
 
-list.printList();
 
-console.log(findMid(list).data);
+
+findMid(list)
