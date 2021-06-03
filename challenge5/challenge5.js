@@ -35,3 +35,4 @@ list.insertAtHead(14);
 list.insertAtHead(8);
 
 removeDuplicate(list)
+
