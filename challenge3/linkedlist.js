@@ -21,7 +21,7 @@ module.exports = class LinkedList {
     insertAtTail(data) {
         let tempNode = new Node(data)
         if(this.isEmpty()) {
-            this.head = node;
+            this.head = tempNode;
             return this;
         }
     
