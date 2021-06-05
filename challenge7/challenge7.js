@@ -4,7 +4,6 @@ const Node = require('./node.js');
 
 function removeDuplicates(list) {
     let outerNode = list.head;
-    console.log(outerNode);
     while(outerNode !== null) {
         let innerNode = outerNode;
         while(innerNode !== null) {
